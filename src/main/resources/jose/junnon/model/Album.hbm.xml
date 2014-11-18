@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30 Oct, 2013 3:53:29 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="jose.junnon.model.Album" table="album">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="100" />
+        </property>
+        <property name="photo" type="string">
+            <column name="photo" length="400" />
+        </property>
+        <property name="isactive" type="java.lang.Boolean">
+            <column name="isactive" />
+        </property>
+        <set name="photogalleries" inverse="true">
+            <key>
+                <column name="album_id" />
+            </key>
+            <one-to-many class="jose.junnon.model.Photogallery" />
+        </set>
+    </class>
+</hibernate-mapping>

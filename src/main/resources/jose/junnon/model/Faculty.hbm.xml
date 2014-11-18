@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30 Oct, 2013 3:53:29 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="jose.junnon.model.Faculty" table="faculty">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="40" />
+        </property>
+        <property name="photo" type="string">
+            <column name="photo" length="400" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="9999" />
+        </property>
+        <property name="designation" type="string">
+            <column name="designation" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

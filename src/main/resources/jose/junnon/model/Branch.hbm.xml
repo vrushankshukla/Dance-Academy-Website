@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30 Oct, 2013 3:53:29 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="jose.junnon.model.Branch" table="branch">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="branchName" type="string">
+            <column name="branch_name" length="20" />
+        </property>
+        <property name="line1" type="string">
+            <column name="line1" length="40" />
+        </property>
+        <property name="line2" type="string">
+            <column name="line2" length="40" />
+        </property>
+        <property name="line3" type="string">
+            <column name="line3" length="40" />
+        </property>
+        <property name="line4" type="string">
+            <column name="line4" length="40" />
+        </property>
+        <property name="photo" type="string">
+            <column name="photo" length="400" />
+        </property>
+        <property name="latitude" type="string">
+            <column name="latitude" length="40" />
+        </property>
+        <property name="longitude" type="string">
+            <column name="longitude" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

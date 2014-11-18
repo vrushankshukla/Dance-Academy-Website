@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="krsalvi_josshnjunoon" match-schema="public"/>
+  <table-filter match-name="branch"/>
+  <table-filter match-name="album"/>
+  <table-filter match-name="faculty"/>
+  <table-filter match-name="photogallery"/>
+  <table-filter match-name="event"/>
+  <table-filter match-name="usermain"/>
+  <table-filter match-name="person_info"/>
+  <table-filter match-name="videogallery"/>
+  <table-filter match-name="achievement"/>
+</hibernate-reverse-engineering>
