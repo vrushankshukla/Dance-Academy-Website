@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j" 
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+    <!--       xmlns:rich="http://richfaces.org/rich"-->
+
+    <h:head>
+        <title>Facelet Title</title>
+         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
+        <link rel="stylesheet" href="css/grid.css"/>
+
+        <link rel="stylesheet" href="css/grid.responsive.css"/>
+        <link rel="stylesheet" href="css/normalize.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pontano+Sans&subset;latin,latin-ext"/>
+        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" href="css/core.css"/>
+        <link rel="stylesheet" href="css/color-orange.css"/>
+        
+        <!--  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
+        
+    </h:head>
+    <h:body>
+       
+           <ui:composition template="template/common/commonAdminLayout.xhtml">
+            <ui:define name="content"> 
+                #{usermainServiceBean.init()}
+                  #{fileUploadBean.init()}
+        <!--  <link rel="stylesheet" href="/resources/demos/style.css" />-->
+         <link rel="stylesheet" href="css/common-admin.css"/>
+         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+         <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script>
+        <script>
+          jQuery(function($){
+          $("#datepicker").datepicker({dateFormat:"dd/mm/yy"});
+
+         $("#datepicker1").datepicker({dateFormat:"dd/mm/yy"});
+
+            });
+        </script>
+                       
+        <div id="backdiv">
+            <div id="upperdiv">
+                <div style="margin: 80px">
+                    <span id="admin-heading"><b>ADD EVENT</b></span><br/><hr/><br/>
+                <f:view>
+                    <h:form prependId="false">
+                        <table cellpadding="10px">
+                            <tr>
+                                <td id="admin-detail"><b>Title : </b></td>
+                                <td>
+                                    <h:inputText styleClass="textbox" id="t1" value="#{eventManagedBean.title}" maxlength="40" required="true" requiredMessage="Please enter title" />&nbsp;
+                                    <h:message for="t1" style="color: white"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td id="admin-detail"><b>Starting Date : </b></td>
+                                <td>
+                                    <h:inputText styleClass="textbox" id="datepicker" value="#{eventManagedBean.startdate}" required="true" requiredMessage="please enter date" />&nbsp;
+                                    <h:message for="datepicker" style="color: white"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="admin-detail"><b>Ending Date : </b></td>
+                                <td>
+                                    <h:inputText styleClass="textbox" id="datepicker1" value="#{eventManagedBean.enddate}" required="true" requiredMessage="please enter date"  />&nbsp;
+                                    <h:message for="datepicker1" style="color: white"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="admin-detail"><b>Place : </b></td>
+                                <td>
+                                    <h:inputText styleClass="textbox" id="p" value="#{eventManagedBean.place}" maxlength="40" required="true" requiredMessage="Please enter place" />&nbsp;
+                                    <h:message for="p" style="color: white"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td id="admin-detail"><b>About Event:</b></td>
+                                <td>
+                                    <h:inputTextarea styleClass="text-area" id="about" value="#{eventManagedBean.description}"  required="true" requiredMessage="enter detail about event" />&nbsp;
+                                    <h:message for="about" style="color: white"/>    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="admin-detail"><b>Add Photos of Events :</b></td>
+                                <td>
+                                    <h:panelGrid columns="2" columnClasses="top,top">
+                                        <rich:fileUpload fileUploadListener="#{fileUploadListener.imageUploadListenerforEvent}" id="upload" acceptedTypes="jpg, gif, png, bmp">
+                                            <a4j:ajax event="uploadcomplete" execute="@none" render="info" />
+                                        </rich:fileUpload>
+                                        <h:panelGroup id="info" layout="block">
+                                            <rich:panel bodyClass="info">
+                                                <f:facet name="header">
+                                                    <h:outputText value="Uploaded Files Info" />
+                                                </f:facet>
+                                                <h:outputText value="No files currently uploaded" rendered="#{fileUploadBean.size==0}" />
+                                                <rich:dataGrid columns="1" value="#{fileUploadBean.files}" var="file" rowKeyVar="row">
+                                                    <rich:panel bodyClass="rich-laguna-panel-no-header">
+                                                        <h:panelGrid columns="2">
+                                                            <a4j:mediaOutput element="img" mimeType="image/jpeg" createContent="#{fileUploadBean.paint}"
+                                                                             value="#{row}" style="width:100px; height:100px;" cacheable="false">
+                                                                <f:param value="#{fileUploadBean.timeStamp}" name="time" />
+                                                            </a4j:mediaOutput>
+                                                            <h:panelGrid columns="2">
+                                                                <h:outputText value="File Name:"/>
+                                                                <h:outputText value="#{file.name}"/>
+                                                                <h:outputText value="File Length(bytes):" />
+                                                                <h:outputText value="#{file.length}" />
+                                                            </h:panelGrid>
+                                                        </h:panelGrid>
+                                                    </rich:panel>
+                                                </rich:dataGrid>
+                                            </rich:panel>
+                                            <br />
+                                            <!--                <a4j:commandButton action="{fileUploadBean.clearUploadData}" render="info, upload" value="Clear Uploaded Data"
+                                                                rendered="{fileUploadBean.size>0}" />-->
+                                        </h:panelGroup>
+                                    </h:panelGrid>                                </td>
+                            </tr>
+                        <tr>
+                                <td>
+                                   
+                                    
+                                </td> 
+                            <td>
+                                <h:commandButton styleClass="btn"  value="Save" action="#{eventServiceBean.addEvent()}" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               <h:commandButton styleClass="btn" value="cancle" action="#{eventServiceBean.deleteUploadedFileinEvent()}"/> 
+                            </td>
+                        </tr>
+                        </table>
+                        
+                    </h:form>
+                </f:view>
+
+            </div>
+        </div>
+        </div>
+        <footer id="page-footer" >
+            <div class="copyright">2013 All rights reserved by <a href="#">JM Services Company Private Limited</a>. <span class="author">Developed by <a href="#" title="">Vrushank(9974856626) &amp; Manan(9909913283) </a></span></div>
+        </footer>
+        
+            </ui:define>
+            </ui:composition>
+    </h:body>
+</html>
+

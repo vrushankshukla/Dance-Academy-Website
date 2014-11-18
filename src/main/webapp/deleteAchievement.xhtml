@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+         <title>Facelet Title</title>
+        
+    </h:head>
+    <h:body>
+    <ui:composition template="template/common/commonAdminLayout.xhtml">
+            <ui:define name="content">
+                #{usermainServiceBean.init()}
+                  #{fileUploadBean.init()}
+        <!--  <link rel="stylesheet" href="/resources/demos/style.css" />-->
+         <link rel="stylesheet" href="css/common-admin.css"/>
+     
+       <div id="backdiv">
+            <div id="upperdiv">
+                <div style="margin: 80px">
+                    <span id="admin-heading"><b>DELETE ACHIEVEMENT</b></span><br/><hr/><br/>
+                    <f:view>
+                        <h:form prependId="false">
+                            <h:dataTable cellpadding="10px" value="#{achievementServiceBean.retriveAchievement()}" var="achievement">
+                         
+                             <h:column>
+                                 <div>
+                                      <table cellpadding="10px">
+                                                            <tr>
+                                                                <th>
+                                                            
+                                                                    <img src="images/achievment/#{achievement.photo}" style="height: 100px;width: 100px;border: 5px solid #ff4900;border-radius:5px"/>
+<!--                                                                <a4j:mediaOutput styleClass="event-photo" element="img" mimeType="image/jpeg" createContent="{fileUploadBean.drawImage}"
+                                                                         value="{event.photo}"  cacheable="false">
+                                                        </a4j:mediaOutput>-->
+                                                                
+                                                        </th>
+                                                        <th>
+                                                        <table cellpadding="2px">
+                                                            <tr>
+                                                                <th colspan="2" class="event-subtitle">
+<!--                                                                <td id="heading-popup">Event:</td>-->
+                                                             
+                                                          #{achievement.title}
+                                                                
+                                                                
+                                                            </th>
+                                                        </tr>
+                                                            <tr>
+                                                                <td class="event-subtitle">#{achievement.description}</td>
+                                                            
+                                                            </tr>
+                                                             </table>
+                                                        </th>
+                                                        </tr>
+                                                    </table>
+                                 </div>
+                             </h:column>
+                             <h:column>
+                                 <h:commandButton styleClass="btn"  action="#{achievementServiceBean.deleteAchievement()}" value="delete">
+                                     <f:setPropertyActionListener value="#{achievement.id}" target="#{achievementServiceBean.achievementId}"/>
+                                 </h:commandButton>
+                             </h:column>
+                         </h:dataTable>
+                         </h:form><hr/>
+                    </f:view>
+            </div>
+        </div>
+        </div>
+        <footer id="page-footer" >
+            <div class="copyright">2013 All rights reserved by <a href="#">JM Services Company Private Limited</a>. <span class="author">Developed by <a href="#" title="">Vrushank(9974856626) &amp; Manan(9909913283) </a></span></div>
+        </footer>
+        
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

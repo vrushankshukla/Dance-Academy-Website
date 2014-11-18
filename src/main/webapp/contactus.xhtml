@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich">
+    <head>
+        <title>TODO supply a title</title>
+        
+    </head>
+    <h:body>
+        <ui:composition template="template/common/commonLayout.xhtml">
+            <ui:define name="title">Contact Us</ui:define>
+            <ui:define name="content">
+<!--              <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&amp;sensor=false"></script>-->
+                #{fileUploadBean.init()}
+                <!--  <link rel="stylesheet" href="/resources/demos/style.css" />-->
+                
+                <link rel="stylesheet" href="css/common-admin.css"/>
+<!--                 <script>
+        function initialize()
+        {
+        var mapProp = {
+          center:new google.maps.LatLng(51.508742,-0.120850),
+          zoom:5,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        var map=new google.maps.Map(document.getElementById("googleMap1"),mapProp);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+        </script>-->
+
+
+                <div id="backdiv">
+                    <div id="upperdiv">
+                        <div style="margin: 80px">
+                            <span id="admin-heading"><b>CONTACT US</b></span><br/><hr/><br/>
+                            
+<!--                            <h:form prependId="false">
+                                <table cellpadding="10px">
+                                        <tr>
+                                           
+                                    
+                                            <td><h:dataTable value="#{personInfoServiceBean.retrivePersonInfo()}" var="person">
+                                                <h:column>
+                                                    <h:outputText><img src="images/business_contact.png"/>  #{person.name}</h:outputText>
+                                                    <h:outputText><img src="images/contact (1).png"/>  #{person.phoneNumber}</h:outputText>
+                                                    <h:outputText><img src="images/contact.png"/>  #{person.emailId}</h:outputText>
+                                                </h:column>
+                                       
+                                   
+                           </h:dataTable>
+                                        </td>
+                                </tr>
+                                </table>
+                            </h:form>-->
+
+
+<!--    <h:dataTable cellpadding="15px" value="#{personInfoServiceBean.retrivePersonInfo()}" var="person">
+        <h:column>
+            <img src="images/business_contact.png" style="width: 15px;height: 15px"/><span id="admin-detail">  #{person.name}</span></h:column>
+        <h:column><img src="images/contact (1).png" style="width: 15px;height: 15px"/><span id="admin-detail">  #{person.phoneNumber}</span></h:column>
+        <h:column><img src="images/contact.png" style="width: 15px;height: 15px"/><span id="admin-detail">  #{person.emailId}</span>
+        </h:column>
+    </h:dataTable>-->
+<rich:dataTable style="margin-left: 5%;width: 90%" value="#{personInfoServiceBean.retrivePersonInfo()}" var="person"> 
+
+    <rich:column style="text-align: center;padding: 20px">
+
+         <f:facet name="header"><img src="images/business_contact.png" style="width: 40px;height: 40px"/></f:facet>
+
+         <h:outputText styleClass="event-title" style="color: #ff4900;text-decoration: none" value="#{person.name}"/>
+
+     </rich:column>
+
+     <rich:column style="text-align: center">
+
+           <f:facet name="header"><img src="images/contact (1).png" style="width: 40px;height: 40px"/></f:facet>
+
+           <h:outputText styleClass="about-faculty" style="color: #ff4900" value="#{person.phoneNumber}"/>
+
+     </rich:column>
+
+     <rich:column style="text-align: center">
+
+          <f:facet name="header"><img src="images/contact.png" style="width: 40px;height: 40px"/></f:facet>
+
+          <h:outputText styleClass="about-faculty" style="text-decoration: underline;color: #ff4900" value="#{person.emailId}"/>
+
+     </rich:column>
+
+     
+</rich:dataTable>
+
+  
+<h:form>
+    <h:dataTable width="92%" cellpadding="10px" style="margin-left: 4%;margin-top: 4%" value="#{branchServiceBean.retriveBranch()}" var="branch">
+                                    <h:column>
+                                    <fieldset>
+                                        <legend class="contact-heading" align="center" style="text-decoration: none;color: #ff4900;font-weight: 900">#{branch.branchName}</legend>
+                                    <table cellpadding="10px">
+                                        <tr>
+                                            <td style="width: 45%">
+                                                <img src="images/branch/#{branch.photo}" style="height: 215px;width: 300px;border: 2px solid #ff4900;border-radius:5px"/>
+                                            </td>
+                                            <td class="contact-heading" style=" width: 45%;text-decoration: none" align="justify" valign="top">
+                                                #{branch.line1}<br/>
+                                                #{branch.line2}<br/>
+                                                #{branch.line3}<br/>
+                                                #{branch.line4}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="2">
+<!--                                                <div id="googleMap" style="height: 300px;width: 900px;border: 1px solid #ff4900;">
+                                                {branch.latitude}
+                                                {branch.longitude}
+                                                </div>-->
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                                    </h:column> 
+                                </h:dataTable>
+                            </h:form><br/>
+                             
+                        </div>
+                    </div>
+
+                </div>
+               <footer id="page-footer">
+
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="span4">
+                        <div>
+                            <div class="fancy-headers"><h3><span>Jossh N Junoon</span> Dance Academy</h3></div>
+                            <div class="vcard">
+                               
+                                <div class="fancy-headers"  ><h3><span>Ahmedabad Studio</span></h3></div>
+                                <div class="adr">
+                                    <span class="street-address">8, Ground Floor,</span>
+                                    <span class="extended-address">Opp, Mother Milk Palace and Gormo Restaurant,</span><br/>
+                                    <span class="locality">Judges Bunglow Road,</span>
+                                    <abbr class="region">Bodakdev,</abbr>
+                                    <span class="postal-code">Ahmedabad-380054.</span>
+                                </div>
+<!--                                <div class="tel">999 871 7078</div>-->
+<!--                                <div><a class="email" href="#">josh&amp;junnon@jmservice.in</a></div>-->
+                            </div>
+                        </div>
+                        <div class="vcard">
+                            <div class="fancy-headers"><h3><span>Sanand Studio</span></h3></div>
+                            <div class="adr">
+                            <span class="street-address">201-202-203,</span><br/>
+                                    <span class="extended-address">Arth Complex,Apna Cinema,</span><br/>
+                                    
+                                    <abbr class="region">Opp. Ghodagadi Stand,</abbr><br/>
+                                    <span class="postal-code">Sanand.</span>
+<!--                            <div class="vcard">
+                                <div class="tel">phone: 392 120 320</div>
+                            </div>-->
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="span4">
+                        <div>
+                            <div class="fancy-headers"><h3>Choreographers</h3></div>
+                            <p>Those are the people, who take care of everything, so you could dance being safe and have fun!</p>
+                            <p>10 Years of Experience in Dance Field (as dance Choreographer) </p>
+                            <ul class="staff-members">
+                               
+                                <li>
+                                    <p class="bubble">Vishwam Shukla</p>
+                                    <figure><img src="images/vishvam.jpg" alt="staff09" width="" height="" /></figure><br/>
+                                    <div class="tel" style="color: #ff4900"><img src="images/contact (1).png" style="width: 12px;height:12px"/> 9998717078</div>
+                                    
+                                </li>
+                                <li>
+                                    <p class="bubble">Nisarg Pandya</p>
+                                    <figure><img src="images/nisharg.jpg" alt="staff10" width="" height="" /></figure><br/>
+                                     <div class="tel" style="color: #ff4900"><img src="images/contact (1).png" style="width: 12px;height:12px"/> 9925040308</div>
+                                </li>
+                                
+                            </ul>
+                           
+                         </div>
+                         
+                        </div>	 
+
+                    <div class="span4">
+                        <div>
+                            <div class="fancy-headers"><h3>social hub</h3></div>
+                            <p>Be always up to date with our latest events! Like our Facebook Fanpage and follow us on Twitter. Discounts, free entries and contest are waiting for you!</p>
+                            
+                                <a target="_blank" href="http://www.youtube.com/channel/UCGe4IC25HhjfBPNPuz5UUEw"><img src="images/youtube-icon.png" style="width: 64px;height: 64px"/></a>
+                                <a target="_blank" href="https://www.facebook.com/pages/Jossh-N-Junoon-Dance-Academy/468766696566981"><img src="images/facebook-icon.png" style="width: 64px;height: 64px"/></a>
+                                <a target="_blank" href="https://twitter.com/josshnjunoon"><img src="images/twitter-icon.png" style="width: 64px;height: 64px"/></a>
+<!--                                <a href="#"><img src="images/Instagram-icon.png" style="width: 64px;height: 64px"/></a>-->
+                            
+                        </div>
+                        						
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="copyright">2013 All rights reserved by <a href="#">JM Services Company Private Limited</a>. <span class="author">Developed by <a href="#" title="">Vrushank(9974856626) &amp; Manan(9909913283) </a></span></div>
+        </footer>
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

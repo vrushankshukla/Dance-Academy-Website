@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <body>
+        <ui:composition>
+            <div id="main-header" style="height: 140px;width: 100%">
+        <header id="page-header">
+        	<div class="container">
+        		<div class="row-fluid">
+        			<div class="span12">
+                                     <span> <h2 style="color: #ff4900;position: absolute;top: 50px;left: 5.5%;font-family: forte;font-weight: 900">Dance</h2></span>
+                                    <a href="Home.xhtml"> <img id="logotype" style="height: 100px;width: 19%" src="img/common/logofinal.png"/></a>
+                                    <span><h2 style="color: #ff4900;position: absolute;top: 50px;left: 21.5%;font-family: forte;font-weight: 900">Academy</h2></span>      
+                                    <h:form prependId="false">	
+                                    <nav id="primary-nav" style="margin-top: 3%;left: 42%;z-index: 1">
+                                
+                                        <ul>
+                                                    <li><a href="adminHome.xhtml" style="font-size: large">Admin Home</a></li>
+        						<li>
+        							<a href="AdminAlbum.xhtml" style="font-size: large" class="withsiblings">Gallery</a>
+        							<ul>
+                                                                    <li><a href="AdminAlbum.xhtml" style="font-size: large">Add Album</a></li>
+                                                                    <li><a href="deleteAlbum.xhtml" style="font-size: large">Delete Album</a></li>
+                                                                    <li><a href="AdminPhotoGallery.xhtml" style="font-size: large">Add Photo to Album</a></li>
+        								<li><a href="deletePhoto.xhtml" style="font-size: large">Delete Photo</a></li>
+                                                                        <li><a href="AdminVideoGallery.xhtml" style="font-size: large">Add Video</a></li>
+                                                                        <li><a href="deleteVideo.xhtml" style="font-size: large">Delete Video</a></li>
+        								
+        							</ul>
+        						</li>
+        						<li><a href="AdminPersonInfo.xhtml" style="font-size: large" >Contact Us</a>
+                                                        <ul>
+                                                                    <li><a href="AdminPersonInfo.xhtml" style="font-size: large">Add Person Information</a></li>
+        								<li><a href="deletePersonInfo.xhtml" style="font-size: large">Delete Person Information</a></li>
+        								<li><a href="AdminBranch.xhtml" style="font-size: large">Add Branch</a></li>
+                                                                        <li><a href="deleteBranch.xhtml" style="font-size: large">Delete Branch</a></li>
+        							</ul>
+                                                        </li>
+        						<li>
+        							<a href="AdminEvent.xhtml" class="withsiblings" style="font-size: large">Event</a>
+        							<ul>
+        								<li><a href="AdminEvent.xhtml" style="font-size: large">Add Event</a></li>
+        								<li><a href="deleteEvent.xhtml" style="font-size: large">Delete Event</a></li>
+        							</ul>
+        						</li>
+        						<li><a href="AdminFaculty.xhtml" style="font-size: large">Faculty</a>
+                                                        <ul>
+        								<li><a href="AdminFaculty.xhtml" style="font-size: large">Add Faculty</a></li>
+        								<li><a href="deleteFaculty.xhtml" style="font-size: large">Delete Faculty</a></li>
+        							</ul>
+                                                        </li>
+                                                        <li><a href="AdminAchievement.xhtml" style="font-size: large">Achievement</a>
+                                                         <ul>
+        								<li><a href="AdminAchievement.xhtml" style="font-size: large">Add Achievement</a></li>
+        								<li><a href="deleteAchievement.xhtml" style="font-size: large">Delete Achievement</a></li>
+        							</ul>
+                                                        </li>
+                                                    <li><h:commandLink action="#{usermainServiceBean.logOut()}" style="font-size: large">Log Out</h:commandLink>
+                                                         
+                                                        </li>
+        					</ul>
+                                        
+        				</nav><!-- /primary nav -->
+        		</h:form>
+                                </div>
+        		</div><!-- /row-fluid -->
+        	</div>
+        </header><!-- /page-header -->
+            </div>			
+        </ui:composition>
+    </body>
+</html>
+
+

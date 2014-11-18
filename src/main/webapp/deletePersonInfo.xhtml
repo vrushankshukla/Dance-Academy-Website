@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich">
+    <h:head>
+         <title>Facelet Title</title>
+        
+    </h:head>
+    <h:body>
+        <ui:composition template="template/common/commonAdminLayout.xhtml">
+            <ui:define name="content">
+                #{usermainServiceBean.init()}
+                  #{fileUploadBean.init()}
+        <!--  <link rel="stylesheet" href="/resources/demos/style.css" />-->
+         <link rel="stylesheet" href="css/common-admin.css"/>
+     
+       <div id="backdiv">
+            <div id="upperdiv">
+                <div style="margin: 80px">
+                    <span id="admin-heading"><b>DELETE PERSON INFORMATION</b></span><br/><hr/><br/>
+                    <h:form prependId="false">
+                        <h:dataTable style="margin-left: 5%;width: 90%" value="#{personInfoServiceBean.retrivePersonInfo()}" var="person"> 
+
+                            <h:column>
+
+                                <f:facet name="header"><img src="images/business_contact.png" style="width: 40px;height: 40px"/></f:facet>
+
+                                <h:outputText styleClass="event-title" style="color: #ff4900;text-decoration: none" value="#{person.name}"/>
+
+                            </h:column>
+
+                            <h:column>
+
+                                <f:facet name="header"><img src="images/contact (1).png" style="width: 40px;height: 40px"/></f:facet>
+
+                                <h:outputText styleClass="about-faculty" style="color: #ff4900" value="#{person.phoneNumber}"/>
+
+                            </h:column>
+
+                            <h:column>
+
+                                <f:facet name="header"><img src="images/contact.png" style="width: 40px;height: 40px"/></f:facet>
+
+                                <h:outputText styleClass="about-faculty" style="text-decoration: underline;color: #ff4900" value="#{person.emailId}"/>
+
+                            </h:column>
+                            <h:column>
+                                <h:commandButton styleClass="btn" action="#{personInfoServiceBean.deletePersonInfo()}" value="delete">
+                                    <f:setPropertyActionListener value="#{person.id}" target="#{personInfoServiceBean.infoId}"/>
+                                </h:commandButton>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+            </div>
+        </div>
+       </div>
+        <footer id="page-footer" >
+            <div class="copyright">2013 All rights reserved by <a href="#">JM Services Company Private Limited</a>. <span class="author">Developed by <a href="#" title="">Vrushank(9974856626) &amp; Manan(9909913283) </a></span></div>
+        </footer>
+        
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

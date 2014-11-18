@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j" 
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+    <!--       xmlns:rich="http://richfaces.org/rich"-->
+
+    <h:head>
+        <title>Facelet Title</title>
+         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
+        <link rel="stylesheet" href="css/grid.css"/>
+
+        <link rel="stylesheet" href="css/grid.responsive.css"/>
+        <link rel="stylesheet" href="css/normalize.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pontano+Sans&subset;latin,latin-ext"/>
+        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" href="css/core.css"/>
+        <link rel="stylesheet" href="css/color-orange.css"/>
+        
+        <!--  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
+        
+    </h:head>
+    <h:body>
+       
+           <ui:composition template="template/common/commonAdminLayout.xhtml">
+            <ui:define name="content"> 
+                #{usermainServiceBean.init()}
+                  #{fileUploadBean.init()}
+        <!--  <link rel="stylesheet" href="/resources/demos/style.css" />-->
+         <link rel="stylesheet" href="css/common-admin.css"/>
+         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+         <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script>
+ <div id="backdiv">
+            <div id="upperdiv">
+                <div style="margin: 80px">
+                    <span id="admin-heading"><b>ADD PERSON INFORMATION</b></span><br/><hr/><br/>
+                <f:view>
+                    <h:form prependId="false">
+                        <table cellpadding="10px">
+                            <tr>
+                                <td id="admin-detail"><b>Name : </b></td>
+                                <td>
+                                    <h:inputText styleClass="textbox" id="t1" value="#{personInfoManagedBean.name}" maxlength="40" required="true" requiredMessage="Please enter name" />&nbsp;
+                                    <h:message for="t1" style="color: white"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="admin-detail"><b>Phone Number : </b></td>
+                                <td>
+                                    <h:inputText styleClass="textbox" id="l1" value="#{personInfoManagedBean.phoneNumber}" maxlength="12" required="true" requiredMessage="Please enter contact number" converterMessage="please enter number only">&nbsp;
+                                        <f:convertNumber integerOnly="true" type="number" />
+                                    </h:inputText>
+                                    <h:messages for="l1" style="color: white"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="admin-detail"><b>Email ID : </b></td>
+                                <td>
+                                    <h:inputText styleClass="textbox" id="l2" value="#{personInfoManagedBean.emailId}" required="true" requiredMessage="Please enter email-address" />&nbsp;
+                                    <h:message for="l2" style="color: white"/>
+                                </td>
+                            </tr>
+                            
+                        <tr>
+                                <td>
+                                   
+                                    
+                                </td> 
+                            <td>
+                                <h:commandButton styleClass="btn"  value="Save" action="#{personInfoServiceBean.addPersonInfo()}" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                
+                            </td>
+                        </tr>
+                        </table>
+                        
+                    </h:form>
+                </f:view>
+
+            </div>
+        </div>
+        </div>
+        <footer id="page-footer" >
+            <div class="copyright">2013 All rights reserved by <a href="#">JM Services Company Private Limited</a>. <span class="author">Developed by <a href="#" title="">Vrushank(9974856626) &amp; Manan(9909913283) </a></span></div>
+        </footer>
+        
+            </ui:define>
+            </ui:composition>
+    </h:body>
+</html>
+

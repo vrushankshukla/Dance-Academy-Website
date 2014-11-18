@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+
+	<h:head>
+<!--		<h:outputStylesheet name="common-style.css" library="css" />-->
+	</h:head>
+    
+    <h:body>
+        <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/css/grid.css" />
+          <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/grid.responsive.css" type="text/css"/>
+       <link rel="stylesheet"  type="text/css" media="screen"  href="#{facesContext.externalContext.requestContextPath}/css/normalize.css"/>
+<link rel="stylesheet"  type="text/css" media="screen"  href="#{facesContext.externalContext.requestContextPath}/css/color-orange.css"/>
+<link rel="stylesheet"  type="text/css" media="screen"  href="#{facesContext.externalContext.requestContextPath}/css/core.css"/>
+
+<!--           <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+-->        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/jquery/jquery.js"></script>        <!--
+-->        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/jquery/jquery.easing.1.3.js"></script><!--
+-->        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/jquery/jquery.cookie.js"></script><!--
+-->        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/jquery/main.js"></script><!--
+  
+<script type="text/javascript" src="{facesContext.externalContext.requestContextPath}/jquery/jquery.classysocial.js"></script>-->
+ 
+<!--	<div id="page">-->
+		
+            <div id="main-wrapper" >
+			<ui:insert name="header" >
+				<ui:include src="/template/common/commonAdminHeader.xhtml" />
+			</ui:insert>
+                 <ui:insert name="content">
+            </ui:insert> 
+	    </div>
+
+    
+    </h:body>
+
+</html>

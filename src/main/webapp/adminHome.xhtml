@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <h:body>
+        <ui:composition template="template/common/commonAdminLayout.xhtml">
+            <ui:define name="content">
+              
+                #{usermainServiceBean.init()}
+                <link rel="stylesheet" type="text/css" href="css/common-admin.css"/>
+                <style>
+                 
+                    .a_link:hover{
+                        color: #ff7200;
+                    }
+                </style>
+       <div id="backdiv">
+                    <div id="upperdiv">
+                          <div style="margin: 80px">
+                              <span id="admin-heading"><b>Welcome To Jossh N Junoon Admin </b></span><br/><hr/><br/>
+                          </div>
+                        <div style="left: 20%;position: relative;top: -60px;width: 60%">
+                           
+                            <table>
+                               <tr>
+                                   <td>
+                                       <a  href="AdminAlbum.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Add Album</h3></a>
+                                       <a  href="AdminPhotoGallery.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Add Photo to Album</h3></a>
+                                       <a href="AdminVideoGallery.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Add Video</h3></a>
+                                       <a href="AdminEvent.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Add Event</h3></a>
+                                       <a href="AdminFaculty.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Add Faculty</h3></a>
+                                       <a href="AdminAchievement.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Add Achievement</h3></a>
+                                       <a href="AdminPersonInfo.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Add Person Information</h3></a>
+                                       <a href="AdminBranch.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Add Branch</h3></a>
+                                   </td>
+                                   <td style="padding-left: 80px">
+                                       <a href="deleteAlbum.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Delete Album</h3></a>
+                            <a href="deletePhoto.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Delete Photo</h3></a>
+                            <a href="deleteVideo.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Delete Video</h3></a>
+                            <a href="deleteEvent.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Delete Event</h3></a>
+                            <a href="deleteFaculty.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Delete Faculty</h3></a>
+                            <a href="deleteAchievement.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Delete Achievement</h3></a>
+                            <a href="deletePersonInfo.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Delete Person Information</h3></a>
+                            <a href="deleteBranch.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Delete Branch</h3></a>
+                                   </td>
+                                   <td style="padding-left: 20px"><br/><br/>
+                                       <a href="EditFaculty.xhtml" style="color: white;font-size: 15px;text-decoration: none"><h3 class="a_link">Edit Faculty</h3></a>
+                                   </td>
+                               </tr>
+                           </table>
+                            </div>
+                        
+                    </div>
+       </div>
+                
+       <footer id="page-footer" >
+            <div class="copyright">2013 All rights reserved by <a href="#">JM Services Company Private Limited</a>. <span class="author">Developed by <a href="#" title="">Vrushank(9974856626) &amp; Manan(9909913283) </a></span></div>
+        </footer>
+        
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j" 
+      xmlns:rich="http://richfaces.org/rich">
+    <head>
+        <title>TODO supply a title</title>
+
+    </head>
+    <h:body>
+        <ui:composition template="template/common/commonLayout.xhtml">
+           <ui:define name="title">Photos of Jossh n Junoon</ui:define>
+            <ui:define name="content">
+                <style>
+                    .img1{
+                        height: 200px;
+                        width: 200px;
+                    }
+                    .label {
+                        font-weight: bold;
+                    }
+                    .rf-dg, .rf-dg-c{
+                        border:none;
+                    }
+                    .pbody {
+                        width: 200px;
+                    }
+                </style>
+
+                <script type="text/javascript" src="jquery/jquery.mousewheel-3.0.4.pack.js"></script>
+                <script type="text/javascript" src="jquery/jquery.fancybox-1.3.4.pack.js"></script>
+                <link rel="stylesheet" type="text/css" href="css/jquery.fancybox-1.3.4.css" media="screen" />
+                <link rel="stylesheet" type="text/css" href="css/common-admin.css" media="screen" />
+                <!--                <link rel="stylesheet" href="css/style-sdt_menu.css" />-->
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        /*
+                         *   Examples - images
+                         */
+
+                        $("a#example1").fancybox();
+
+                        $("a#example2").fancybox({
+                            'overlayShow'	: false,
+                            'transitionIn'	: 'elastic',
+                            'transitionOut'	: 'elastic'
+                        });
+
+                        //			$("a#example3").fancybox({
+                        //				'transitionIn'	: 'none',
+                        //				'transitionOut'	: 'none'	
+                        //			});
+                        //
+                        //			$("a#example4").fancybox({
+                        //				'opacity'		: true,
+                        //				'overlayShow'	: false,
+                        //				'transitionIn'	: 'elastic',
+                        //				'transitionOut'	: 'none'
+                        //			});
+                        //
+                        //			$("a#example5").fancybox();
+                        //
+                        $("a#example6").fancybox({
+                            'titlePosition'		: 'outside',
+                            'overlayColor'		: '#000',
+                            'overlayOpacity'	: 0.9
+                        });
+                        //
+                        //			$("a#example7").fancybox({
+                        //				'titlePosition'	: 'inside'
+                        //			});
+                        //
+                        $("a#example8").fancybox({
+                            'titlePosition'	: 'over'
+                        });
+        $(".fancybox-button").fancybox({
+                        prevEffect		: 'none',
+                        nextEffect		: 'none',
+                        closeBtn		: false,
+                        helpers		: {
+                                title	: { type : 'inside' },
+                                buttons	: {}
+                        }
+                });
+
+                        //			$("a[rel=example_group]").fancybox({
+                        //				'transitionIn'		: 'none',
+                        //				'transitionOut'		: 'none',
+                        //				'titlePosition' 	: 'over',
+                        //				'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+                        //					return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? '  ' + title : '') + '</span>';
+                        //				}
+                        //			});
+                        //
+                        //			/*
+                        //			*   Examples - various
+                        //			*/
+                        //
+                        //			$("#various1").fancybox({
+                        //				'titlePosition'		: 'inside',
+                        //				'transitionIn'		: 'none',
+                        //				'transitionOut'		: 'none'
+                        //			});
+                        //
+                        //			$("#various2").fancybox();
+                        //
+                        //			$("#various3").fancybox({
+                        //				'width'				: '75%',
+                        //				'height'			: '75%',
+                        //				'autoScale'			: false,
+                        //				'transitionIn'		: 'none',
+                        //				'transitionOut'		: 'none',
+                        //				'type'				: 'iframe'
+                        //			});
+                        //
+                        //			$("#various4").fancybox({
+                        //				'padding'			: 0,
+                        //				'autoScale'			: false,
+                        //				'transitionIn'		: 'none',
+                        //				'transitionOut'		: 'none'
+                        //			});
+                    });
+                </script>
+               <div id="backdiv">
+                    <div id="upperdiv">
+                          <div style="margin: 80px">
+                    <span id="admin-heading"><b>Photo Gallery</b></span><br/><hr/><br/>
+
+                    <p style="position: relative;padding-left: 8%">
+                    
+                    <ui:repeat value="#{photoGalleryServiceBean.retrivePhotoByAlbum()}" var="photo"  >
+                        <a class="fancybox-button" rel="fancybox-button" href="images/photos/#{photo.photo}" style="padding-right: 40px;padding-bottom: 40px" title="#{photo.description}">
+                            <img class="img1" src="images/photos/#{photo.photo}" alt="" style="border: 5px solid white" />
+                        </a>
+                    </ui:repeat>
+<!--                     <rich:dataScroller for="table" maxPages="5" />-->
+                    <!--                    <rich:dataGrid value="{photoGalleryServiceBean.retriveAllPhoto()}" var="photo1" columns="3" elements="9">
+                                            <rich:panel bodyClass="pbody">
+                                                <a class="fancybox-button" rel="fancybox-button" href="{photo1.photo}" style="padding-right: 40px;padding-bottom: 40px" title="{photo1.description}">
+                                                    <img class="img1" src="{photo1.photo}" alt="" style="border: 5px solid white" />
+                                        </a>
+                                                                        </rich:panel>
+                                            <f:facet name="footer">
+                                                <rich:dataScroller />
+                                            </f:facet>
+                                        </rich:dataGrid>-->
+                    <!--                    <a class="fancybox-button" rel="fancybox-button" href="images/Desert.jpg" style="padding-right: 40px;padding-bottom: 40px" title="Tolpis barbata (mariluzpicado)">
+                                            <img class="img1" src="images/Desert.jpg" alt="" style="border: 5px solid white" />
+                                        </a>-->
+                    <!--                    <a class="fancybox-button" rel="fancybox-button" href="http://farm4.staticflickr.com/3745/8971419780_cb88b22947_b.jpg" style="padding-right: 40px;padding-bottom: 40px" title="(dSavin)">
+                                            <img class="img1" src="http://farm4.staticflickr.com/3745/8971419780_cb88b22947_m.jpg" alt="" style="border: 5px solid white" />
+                                        </a>
+                                        <a class="fancybox-button" rel="fancybox-button" href="http://farm9.staticflickr.com/8522/8478415115_152c6f5e55_b.jpg" style="padding-right: 40px;padding-bottom: 40px" title="a ride in blue? (cembayir_photography)">
+                                            <img class="img1" src="http://farm9.staticflickr.com/8522/8478415115_152c6f5e55_m.jpg" style="border: 5px solid white" alt="" />
+                                        </a>
+                                        <a class="fancybox-button" rel="fancybox-button" style="padding-right: 40px;padding-bottom: 40px" href="http://farm9.staticflickr.com/8366/8483546751_86494ae914_b.jpg" title="reedit... (h_di)">
+                                            <img class="img1" src="http://farm9.staticflickr.com/8366/8483546751_86494ae914_m.jpg" style="border: 5px solid white" alt="" />
+                                        </a>
+                                        <a class="fancybox-button" rel="fancybox-button"  style="padding-right: 40px;padding-bottom: 40px" href="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_b.jpg" title="Westfield Waterfalls - Middletown CT Lower (Graham_CS)">
+                                            <img class="img1" src="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_m.jpg"  style="border: 5px solid white" alt="" />
+                                        </a>
+                                        <a class="fancybox-button" rel="fancybox-button"  style="padding-right: 40px;padding-bottom: 40px" href="http://farm4.staticflickr.com/3824/9041440555_2175b32078_b.jpg" title="Calm Before The Storm (One Shoe Photography Ltd.)">
+                                            <img class="img1" src="http://farm4.staticflickr.com/3824/9041440555_2175b32078_m.jpg"  style="border: 5px solid white" alt="" />
+                                        </a>
+                                        <a class="fancybox-button" rel="fancybox-button"  style="padding-right: 40px;padding-bottom: 40px" href="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_b.jpg" title="Lambs Valley (JMImagesonline.com)">
+                                            <img class="img1" src="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_m.jpg"  style="border: 5px solid white" alt="" />
+                                        </a>
+                                        <a class="fancybox-button" rel="fancybox-button"  style="padding-right: 40px;padding-bottom: 40px" href="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_b.jpg" title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))">
+                                            <img class="img1" src="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_m.jpg"  style="border: 5px solid white" alt="" />
+                                        </a>
+                                        
+                                                <a id="example2" href="./example/2_b.jpg"><img alt="example2" src="./example/2_s.jpg" /></a>
+                                
+                                                <a id="example3" href="./example/3_b.jpg"><img alt="example3" src="./example/3_s.jpg" /></a>
+                                                
+                                                <a id="example4" href="./example/4_b.jpg"><img class="last" alt="example4" src="./example/4_s.jpg" /></a>-->
+                    </p>
+                          </div>
+                    </div>
+                   
+                </div>
+                    <footer id="page-footer">
+
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="span4">
+                        <div>
+                            <div class="fancy-headers"><h3><span>Jossh N Junoon</span> Dance Academy</h3></div>
+                            <div class="vcard">
+                               
+                                <div class="fancy-headers"  ><h3><span>Ahmedabad Studio</span></h3></div>
+                                <div class="adr">
+                                    <span class="street-address">8, Ground Floor,</span>
+                                    <span class="extended-address">Opp, Mother Milk Palace and Gormo Restaurant,</span><br/>
+                                    <span class="locality">Judges Bunglow Road,</span>
+                                    <abbr class="region">Bodakdev,</abbr>
+                                    <span class="postal-code">Ahmedabad-380054.</span>
+                                </div>
+<!--                                <div class="tel">999 871 7078</div>-->
+<!--                                <div><a class="email" href="#">josh&amp;junnon@jmservice.in</a></div>-->
+                            </div>
+                        </div>
+                        <div class="vcard">
+                            <div class="fancy-headers"><h3><span>Sanand Studio</span></h3></div>
+                            <div class="adr">
+                            <span class="street-address">201-202-203,</span><br/>
+                                    <span class="extended-address">Arth Complex,Apna Cinema,</span><br/>
+                                    
+                                    <abbr class="region">Opp. Ghodagadi Stand,</abbr><br/>
+                                    <span class="postal-code">Sanand.</span>
+<!--                            <div class="vcard">
+                                <div class="tel">phone: 392 120 320</div>
+                            </div>-->
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="span4">
+                        <div>
+                            <div class="fancy-headers"><h3>Choreographers</h3></div>
+                            <p>Those are the people, who take care of everything, so you could dance being safe and have fun!</p>
+                            <p>10 Years of Experience in Dance Field (as dance Choreographer) </p>
+                            <ul class="staff-members">
+                               
+                                <li>
+                                    <p class="bubble">Vishwam Shukla</p>
+                                    <figure><img src="images/vishvam.jpg" alt="staff09" width="" height="" /></figure><br/>
+                                    <div class="tel" style="color: #ff4900"><img src="images/contact (1).png" style="width: 12px;height:12px"/> 9998717078</div>
+                                    
+                                </li>
+                                <li>
+                                    <p class="bubble">Nisarg Pandya</p>
+                                    <figure><img src="images/nisharg.jpg" alt="staff10" width="" height="" /></figure><br/>
+                                     <div class="tel" style="color: #ff4900"><img src="images/contact (1).png" style="width: 12px;height:12px"/> 9925040308</div>
+                                </li>
+                                
+                            </ul>
+                           
+                         </div>
+                         
+                        </div>	 
+
+                    <div class="span4">
+                        <div>
+                            <div class="fancy-headers"><h3>social hub</h3></div>
+                            <p>Be always up to date with our latest events! Like our Facebook Fanpage and follow us on Twitter. Discounts, free entries and contest are waiting for you!</p>
+                            
+                                <a target="_blank" href="http://www.youtube.com/channel/UCGe4IC25HhjfBPNPuz5UUEw"><img src="images/youtube-icon.png" style="width: 64px;height: 64px"/></a>
+                                <a target="_blank" href="https://www.facebook.com/pages/Jossh-N-Junoon-Dance-Academy/468766696566981"><img src="images/facebook-icon.png" style="width: 64px;height: 64px"/></a>
+                                <a target="_blank" href="https://twitter.com/josshnjunoon"><img src="images/twitter-icon.png" style="width: 64px;height: 64px"/></a>
+<!--                                <a href="#"><img src="images/Instagram-icon.png" style="width: 64px;height: 64px"/></a>-->
+                            
+                        </div>
+                        						
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="copyright">2013 All rights reserved by <a href="#">JM Services Company Private Limited</a>. <span class="author">Developed by <a href="#" title="">Vrushank(9974856626) &amp; Manan(9909913283) </a></span></div>
+        </footer>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

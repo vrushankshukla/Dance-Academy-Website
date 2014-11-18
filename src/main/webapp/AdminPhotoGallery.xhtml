@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:a4j="http://richfaces.org/a4j" 
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:head>
+        <!--        <h:outputScript name="jquery.js" target="head"/>-->
+         <title>Facelet Title</title>
+       
+    </h:head>
+
+    <h:body>
+     <ui:composition template="template/common/commonAdminLayout.xhtml">
+            <ui:define name="content">
+                 #{usermainServiceBean.init()}
+                  #{fileUploadBean.init()}
+        <!--  <link rel="stylesheet" href="/resources/demos/style.css" />-->
+         <link rel="stylesheet" href="css/common-admin.css"/>
+         <div id="backdiv">
+            <div id="upperdiv">
+                <div style="margin: 80px">
+                    <span id="admin-heading"><b>ADD PHOTO</b></span><br/><hr/><br/>
+                    <f:view>
+        <h:form prependId="false">
+           <table cellpadding="10px">
+                        <tr>
+                            <td id="admin-detail"><b><i>About Photo:</i></b></td>
+                            <td>
+                                <h:inputTextarea id="t2" styleClass="text-area" value="#{photoGalleryManagedBean.description}"  required="true" requiredMessage="enter some detail about photo"/>&#200;
+                                <h:message for="t2" style="color: white"/>
+                            </td>
+                        </tr>
+                <tr>
+                            <td id="admin-detail"><b><i>Choose Album:</i></b></td>
+                            <td>
+                                <h:selectOneMenu value="#{photoGalleryManagedBean.id}">
+                                    <f:selectItems value="#{albumServiceBean.retriveAllAlbum()}" var="album"
+                                                   itemLabel="#{album.title}" itemValue="#{album.id}" />
+   		</h:selectOneMenu>
+                                <h:message for="t2" style="color: white"/>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td id="admin-detail">
+                            <b><i>Choose Photo:</i></b>
+                        </td>
+                        <td>
+                        <h:panelGrid columns="2" columnClasses="top,top">
+                            <rich:fileUpload fileUploadListener="#{fileUploadListener.imageUploadListenerforPhotoGallery}" id="upload" acceptedTypes="jpg, gif, png, bmp">
+                                <a4j:ajax event="uploadcomplete" execute="@none" render="info" />
+                            </rich:fileUpload>
+                            <h:panelGroup id="info" layout="block">
+                                <rich:panel bodyClass="info">
+                                    <f:facet name="header">
+                                        <h:outputText value="Uploaded Files Info" />
+                                    </f:facet>
+                                    <h:outputText value="No files currently uploaded" rendered="#{fileUploadBean.size==0}" />
+                                    <rich:dataGrid columns="1" value="#{fileUploadBean.files}" var="file" rowKeyVar="row">
+                                        <rich:panel bodyClass="rich-laguna-panel-no-header">
+                                            <h:panelGrid columns="2">
+                                                <a4j:mediaOutput element="img" mimeType="image/jpeg" createContent="#{fileUploadBean.paint}"
+                                                                 value="#{row}" style="width:100px; height:100px;" cacheable="false">
+                                                    <f:param value="#{fileUploadBean.timeStamp}" name="time" />
+                                                </a4j:mediaOutput>
+                                                <h:panelGrid columns="2">
+                                                    <h:outputText value="File Name:"/>
+                                                    <h:outputText value="#{file.name}"/>
+                                                    <h:outputText value="File Length(bytes):" />
+                                                    <h:outputText value="#{file.length}" />
+                                                </h:panelGrid>
+                                            </h:panelGrid>
+                                        </rich:panel>
+                                    </rich:dataGrid>
+                                </rich:panel>
+                                <br />
+                                <!--                <a4j:commandButton action="{fileUploadBean.clearUploadData}" render="info, upload" value="Clear Uploaded Data"
+                                                    rendered="{fileUploadBean.size>0}" />-->
+                            </h:panelGroup>
+                        </h:panelGrid>
+                        </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                     </td> 
+                            <td>
+                                <h:commandButton styleClass="btn" value="Save" action="#{photoGalleryServiceBean.addPhoto()}" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <h:commandButton styleClass="btn" value="cancle" action="#{photoGalleryServiceBean.deleteUploadedFile()}"/>
+                               
+                            </td>
+                        </tr>
+                    </table>
+                </h:form>
+             </f:view>
+           </div>
+        </div>
+      </div>  
+        <footer id="page-footer" >
+            <div class="copyright">2013 All rights reserved by <a href="#">JM Services Company Private Limited</a>. <span class="author">Developed by <a href="#" title="">Vrushank(9974856626) &amp; Manan(9909913283) </a></span></div>
+        </footer>
+        
+            </ui:define>
+     </ui:composition>
+   </h:body>
+</html>
+
+

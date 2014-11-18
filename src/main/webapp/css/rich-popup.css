@@ -1,0 +1,41 @@
+.rf-pp-cntr {
+   left: 384px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.rf-pp-cnt-scrlr {
+/*    background: url(../images/login-bg.png) repeat-x left bottom; */
+    background-color: white;
+    z-index: 9999;
+    padding: 0px;
+    padding-bottom: 0px;   
+    border: 1px solid #A6C9E2;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;     
+}
+.rf-pp-cnt {
+	padding: 3px;	     
+}
+
+.rf-pp-shdw{
+    display: none;
+}
+.rf-pp-hdr{
+    height: 25px;
+background: #ff4900;
+}
+.rf-pp-cnt-scrlr {
+/*background: url(../images/login-bg.png) repeat-x left bottom;*/
+background-color: #1d1d1d;
+padding: 0px;
+border: 0px;
+border-radius:0px;
+}
+#heading-popup{
+        font-family:'Oswald', sans-serif;
+        color: white;
+        font-size: 25px;
+        font-weight: 900
+    }

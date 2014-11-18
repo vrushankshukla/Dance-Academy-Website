@@ -1,0 +1,111 @@
+ #backdiv {
+        background:#d93d00;
+        border-top: 1px solid #ff7200;
+        width: 100%;
+        padding-bottom: 20px;
+/*        height: 900px*/
+    }
+    #upperdiv {
+        width: 80%;
+        background: #1d1d1d;
+        margin-left: auto;
+        margin-right: auto;
+        border: 10px solid #ff4900;
+        margin-top: 20px
+    }
+     
+    #admin-heading{
+        font-family:'Oswald', sans-serif;
+        color: white;
+        font-size: 50px;
+        font-weight: 900
+    }
+    
+    #admin-detail{
+        font-family:'Oswald', sans-serif;
+        color: white;
+        font-size: large;
+        font-weight: 900
+    }
+    .textbox {
+        width: 300px;
+        height: 25px;
+        border: 2px solid #ff4900;
+        border-radius:3px
+    }
+
+    .text-area{
+        width: 400px;
+        height: 100px;
+        border: 2px solid #ff4900;
+        border-radius:3px
+    }
+    
+    .event-title {
+        font-size: x-large;
+        color: #ff4900;
+        text-decoration: none;
+        font-family:'Oswald', sans-serif;
+        font-weight: 900;
+    }
+    .event-title:hover{
+        color:white;
+        text-decoration: underline;
+    }
+    .event-subtitle{
+        font-size: large;
+        font-family:'Oswald', sans-serif;
+        color: white;
+        font-weight: 900
+    }
+    .event-photo{
+        width:150px; 
+        height:150px;
+        border:5px solid #ff4900;
+        border-radius:5px;
+    }
+    .event-photo:hover{
+        border: 5px solid white;
+       
+    }
+    .faculty-photo{
+        width:200px; 
+        height:250px;
+        border:2px solid #ff4900;
+        border-radius:5px;
+    }
+    .faculty-name{
+        font-size: xx-large;
+        color: white;
+        font-family: cursive;
+        font-style: italic;
+        text-transform: uppercase;
+        font-weight: 100;
+    }
+    .faculty-desig{
+        font-size: x-large;
+        color: #ff4900;
+        text-transform: none;
+        font-family: cursive;
+        font-style: italic;
+        
+    }
+    .about-faculty{
+        font-size: large;
+        font-family: cursive;
+        color:#ededed;
+        
+    }
+    .contact-heading{
+        font-family: cursive;
+        font-style: italic;
+        text-decoration: underline;
+        font-size: x-large;
+        color: white
+    }
+    .contact-detail{
+        font-family: cursive;
+        font-style: italic;
+        font-size: large;
+        color: white;
+    }

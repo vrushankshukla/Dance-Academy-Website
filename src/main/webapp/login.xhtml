@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+       
+    </h:head>
+    <h:body>
+         <ui:composition template="template/common/commonLayout.xhtml">
+            <ui:define name="content">
+                
+                  #{fileUploadBean.init()}
+        <!--  <link rel="stylesheet" href="/resources/demos/style.css" />-->
+         <link rel="stylesheet" href="css/common-admin.css"/>
+     
+         <div id="backdiv">
+            <div id="upperdiv">
+                <div style="margin: 80px">
+                    <span id="admin-heading"><b>LOGIN HERE</b></span><br/><hr/><br/>
+                <f:view>
+                    <h:form prependId="false">
+                        <table cellpadding="10px">
+                            <tr>
+                                <td id="admin-detail"><b>User Name: </b></td>
+                                <td>
+                                    <h:inputText styleClass="textbox" maxlength="20" id="uname" value="#{usermainManagedBean.username}" required="true" requiredMessage="please enter user name" />&nbsp;&nbsp;
+                                    <h:message for="uname" style="color: white"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="admin-detail"><b>Password:</b></td>
+                                <td>
+                                    <h:inputSecret styleClass="textbox"  id="pwd" required="true" value="#{usermainManagedBean.password1}" requiredMessage="please enter password" /> &nbsp;&nbsp;
+                                    <h:message for="pwd" style="color: white"/>
+                                </td>
+                            </tr>
+                        </table><br/>
+                         <h:outputText value="#{usermainServiceBean.checkLogin}" style="color: #ff7200;font-size: medium" rendered="#{usermainServiceBean.checkLogin!=null}"/><br/><br/>
+                        <h:commandButton styleClass="btn" value="Sign In" action="#{usermainServiceBean.doLogin()}" /> &nbsp;&nbsp;
+                        <h:commandButton  immediate="true" styleClass="btn" value="Forgot Password"  action="#{usermainServiceBean.sendMail1()}"/>
+                        
+                       
+                    </h:form>
+                </f:view>
+
+            </div>
+        </div>
+         </div>
+<footer id="page-footer">
+
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="span4">
+                        <div>
+                            <div class="fancy-headers"><h3><span>Jossh N Junoon</span> Dance Academy</h3></div>
+                            <div class="vcard">
+                               
+                                <div class="fancy-headers"  ><h3><span>Ahmedabad Studio</span></h3></div>
+                                <div class="adr">
+                                    <span class="street-address">8, Ground Floor,</span>
+                                    <span class="extended-address">Opp, Mother Milk Palace and Gormo Restaurant,</span><br/>
+                                    <span class="locality">Judges Bunglow Road,</span>
+                                    <abbr class="region">Bodakdev,</abbr>
+                                    <span class="postal-code">Ahmedabad-380054.</span>
+                                </div>
+<!--                                <div class="tel">999 871 7078</div>-->
+<!--                                <div><a class="email" href="#">josh&amp;junnon@jmservice.in</a></div>-->
+                            </div>
+                        </div>
+                        <div class="vcard">
+                            <div class="fancy-headers"><h3><span>Sanand Studio</span></h3></div>
+                            <div class="adr">
+                            <span class="street-address">201-202-203,</span><br/>
+                                    <span class="extended-address">Arth Complex,Apna Cinema,</span><br/>
+                                    
+                                    <abbr class="region">Opp. Ghodagadi Stand,</abbr><br/>
+                                    <span class="postal-code">Sanand.</span>
+<!--                            <div class="vcard">
+                                <div class="tel">phone: 392 120 320</div>
+                            </div>-->
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="span4">
+                        <div>
+                            <div class="fancy-headers"><h3>Choreographers</h3></div>
+                            <p>Those are the people, who take care of everything, so you could dance being safe and have fun!</p>
+                            <p>10 Years of Experience in Dance Field (as dance Choreographer) </p>
+                            <ul class="staff-members">
+                               
+                                <li>
+                                    <p class="bubble">Vishwam Shukla</p>
+                                    <figure><img src="images/vishvam.jpg" alt="staff09" width="" height="" /></figure><br/>
+                                    <div class="tel" style="color: #ff4900"><img src="images/contact (1).png" style="width: 12px;height:12px"/> 9998717078</div>
+                                    
+                                </li>
+                                <li>
+                                    <p class="bubble">Nisarg Pandya</p>
+                                    <figure><img src="images/nisharg.jpg" alt="staff10" width="" height="" /></figure><br/>
+                                     <div class="tel" style="color: #ff4900"><img src="images/contact (1).png" style="width: 12px;height:12px"/> 9925040308</div>
+                                </li>
+                                
+                            </ul>
+                           
+                         </div>
+                         
+                        </div>	 
+
+                    <div class="span4">
+                        <div>
+                            <div class="fancy-headers"><h3>social hub</h3></div>
+                            <p>Be always up to date with our latest events! Like our Facebook Fanpage and follow us on Twitter. Discounts, free entries and contest are waiting for you!</p>
+                            
+                                <a target="_blank" href="http://www.youtube.com/channel/UCGe4IC25HhjfBPNPuz5UUEw"><img src="images/youtube-icon.png" style="width: 64px;height: 64px"/></a>
+                                <a target="_blank" href="https://www.facebook.com/pages/Jossh-N-Junoon-Dance-Academy/468766696566981"><img src="images/facebook-icon.png" style="width: 64px;height: 64px"/></a>
+                                <a target="_blank" href="https://twitter.com/josshnjunoon"><img src="images/twitter-icon.png" style="width: 64px;height: 64px"/></a>
+<!--                                <a href="#"><img src="images/Instagram-icon.png" style="width: 64px;height: 64px"/></a>-->
+                            
+                        </div>
+                        						
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="copyright">2013 All rights reserved by <a href="#">JM Services Company Private Limited</a>. <span class="author">Developed by <a href="#" title="">Vrushank(9974856626) &amp; Manan(9909913283) </a></span></div>
+        </footer>
+            </ui:define>
+         </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <h:body>
+        <ui:composition template="template/common/commonLayout.xhtml">
+             <ui:define name="title">What We Teach in Jossh n Junoon</ui:define>
+            <ui:define name="content">
+                <link rel="stylesheet" type="text/css" href="css/common-admin.css" media="screen" />
+                
+                <script type="text/javascript" src="jquery/jquery.reveal.js"></script>
+                <script>
+                   $(document).ready(function(){	
+                       $("#Western").hide();
+                       $("#Folk").hide();
+                       $("#Aerobics").hide();
+                       $("#Event-management").hide();
+                       $("#Yoga").hide();
+                       $("#Workshop").hide();                             
+                       $(".common").show();
+                       
+                       $('.Western-Dance').click(function() {
+                            		
+                            $('#common').hide();
+                            $("#Folk").hide();
+                            $("#Aerobics").hide();
+                            $("#Event-management").hide();
+                            $("#Yoga").hide();
+                            $("#Workshop").hide();
+                            $('#Western').show(); 
+                        });
+                         $('.Folk-Dance').click(function() {
+                            	
+                            $('#common').hide();
+                            $("#Western").hide();                         
+                            $("#Aerobics").hide();
+                            $("#Event-management").hide();
+                            $("#Yoga").hide();
+                            $("#Workshop").hide();
+                            $('#Folk').show();
+                        });
+                        
+                        $('.Aerobics-ex').click(function() {
+                            
+                            $("#Western").hide();
+                            $("#Folk").hide();
+                            $("#Event-management").hide();
+                            $("#Yoga").hide();
+                            $("#Workshop").hide();
+                            $('#common').hide();
+                            $('#Aerobics').show();
+                        });
+                        $('.Event-management-show').click(function() {
+                            
+                            $("#Western").hide();
+                            $("#Folk").hide();
+                            $("#Aerobics").hide();
+                            $("#Yoga").hide();
+                            $("#Workshop").hide();
+                            $('#common').hide();
+                            $('#Event-management').show();
+                        });
+                        
+                        $('.Yoga-guru').click(function() {
+                            
+                            $("#Western").hide();
+                            $("#Folk").hide();
+                            $("#Aerobics").hide();
+                            $("#Event-management").hide();
+                            $("#Workshop").hide();
+                            $('#common').hide();
+                            $('#Yoga').show();
+                        });
+                        $('.Workshop-event').click(function() {
+                            
+                            $("#Western").hide();
+                            $("#Folk").hide();
+                            $("#Aerobics").hide();
+                            $("#Event-management").hide();
+                            $("#Yoga").hide();
+                            $('#common').hide();
+                            $('#Workshop').show();
+                        });
+                        
+                    });
+                </script>
+                
+                <div id="backdiv">
+                    <div id="upperdiv">
+                          <div style="margin: 80px">
+                    <span id="admin-heading"><b>What We Teach</b></span><br/><hr/><br/>
+                        <table>
+                            <tr>
+                                <td valign="top" style="width: 30%">
+                                    <div class="entry-content" style="padding-left: 20%">
+
+
+                                        <a href="#" class="Western-Dance"  data-reveal-id="myModal" style="text-decoration:none;color:#0033FF"><h3 style="color: white;font-weight: bold">
+                                            Western Dance
+                                            </h3></a> 
+                                        
+                                        <a href="#" class="Folk-Dance"  data-reveal-id="myModal" style="text-decoration:none;color:#0033FF"><h3 style="color: white;font-weight: bold">
+                                                Folk Dance
+                                            </h3></a>
+
+                                        <a href="#" class="Aerobics-ex"  data-reveal-id="myModal" style="text-decoration:none;color:#0033FF"><h3 style="color: white;font-weight: bold">
+                                                Aerobics
+                                            </h3></a>
+                                        <a href="#" class="Event-management-show"  data-reveal-id="myModal" style="text-decoration:none;color:#0033FF"><h3 style="color: white;font-weight: bold">
+                                                Event Management
+                                            </h3></a>
+                                        <a href="#" class="Yoga-guru"  data-reveal-id="myModal" style="text-decoration:none;color:#0033FF"><h3 style="color: white;font-weight: bold">
+                                                Yoga
+                                            </h3></a>
+                                        <a href="#" class="Workshop-event"  data-reveal-id="myModal" style="text-decoration:none;color:#0033FF"><h3 style="color: white;font-weight: bold">
+                                               WorkShop
+                                            </h3></a>
+                                    </div>
+                                </td>
+                                <td valign="top" style="position: relative;width: 80%;padding-left: 20px;border-left: 1px solid white">
+
+                                    <div id="common" >
+                                        <table>
+                                            <tr>
+                                                <td><img src="images/yoga1.jpg" style="height: 150px;width: 200px;border: 1px solid #ff4900;"/></td>
+                                                <td><img src="images/western-dance.jpg" style="height: 150px;width: 200px;border: 1px solid #ff4900;"/></td>
+                                                <td><img src="images/falk-dance.jpg" style="height: 150px;width: 200px;border: 1px solid #ff4900;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="images/Contemporary.jpg" style="height: 150px;width: 200px;border: 1px solid #ff4900;"/></td>
+                                                <td><img src="images/whatweteach.jpg" style="height: 135px;width: 185px;border: 9px solid #ff4900;"/></td>
+                                                <td><img src="images/bolly-hop1.jpg" style="height: 150px;width: 200px;border: 1px solid #ff4900;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="images/event-management.jpg" style="height: 150px;width: 200px;border: 1px solid #ff4900;"/></td>
+                                                <td><img src="images/aerobics.jpg" style="height: 150px;width: 200px;border: 1px solid #ff4900;"/></td>
+                                                <td><img src="images/workshop2.jpg" style="height: 150px;width: 200px;border: 1px solid #ff4900;"/></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="Western">
+                                       
+                                        <div id="full3">
+                                            <a id="example7" href="#">
+                                                <table style="margin-left: 20%">
+                                            <tr>
+                                                <td><img src="images/bollywood-dance.jpg" style="height: 79px;width: 112px;border: 1px solid #ff4900;"/></td>
+                                                <td><img src="images/Contemporary.jpg" style="height: 79px;width: 162px;border: 1px solid #ff4900;"/></td>
+                                                <td><img src="images/hip-hop.jpg" style="height: 79px;width: 112px;border: 1px solid #ff4900;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="images/bolly-hop1.jpg" style="height: 79px;width: 112px;border: 1px solid #ff4900;"/></td>
+                                                <td style="height: 79px;width: 125px;font-size: xx-large;color: white;text-align: center">WESTERN DANCE</td>
+                                                <td><img src="images/jazz.jpg" style="height: 79px;width: 112px;border: 1px solid #ff4900;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="images/salsa.jpg" style="height: 79px;width: 112px;border: 1px solid #ff4900;"/></td>
+                                                <td><img src="images/mj.jpg" style="height: 79px;width: 162px;border: 1px solid #ff4900;"/></td>
+                                                <td><img src="images/break_dance_contest.jpg" style="height: 79px;width: 112px;border: 1px solid #ff4900;"/></td>
+                                            </tr>
+                                        </table></a>
+<!--                                            <a id="example7" href="#"><img class="left" style="left: 20%;position: relative" src="images/bollywood-dance.jpg" width="400" height="200" alt="bollywood-dance"/></a>-->
+                                            <h3 align="center" style="color: #0B75AF">About Western-Dance</h3>
+                                            <p style="color: white">Western dance, encompasses many dance forms or styles, which are typically danced to country-western music, and which are stylistically associated with American country and/or western traditions.Jossh N Junoon Gurus are teaching and providing dance lesson to students all this dance styles.</p>
+                                            <p style="color: white">Here, you can learn..</p>
+                                            <p style="color: white">-> <span style="color: #ff4900;font-weight: bolder">Bollywood Dance</span> - Over the years Bollywood movies have developed their own signature style of song and dance, which combines the rich texture of India’s many classical and folk dances, fused with elements of Jazz, Hip – Hop, Arabic and Latin Forms.</p>
+                                            <p style="color: white">-> <span style="color: #ff4900;font-weight: bolder">Contemporary Dance</span> -  contemporary dance tends to utilize both the strong and controlled legwork of ballet and modern dance's stress on the torso, and also employs contact-release, floor work, fall and recovery, and improvisation characteristic of modern dance.[2] Unpredictable changes in rhythm, speed, and direction are often used, as well. It sometimes also incorporates elements of non-western dance cultures such as elements from African dance including bent knees, or movements from the Japanese contemporary dance. </p>
+                                            <p style="color: white">-> <span style="color: #ff4900;font-weight: bolder">Hip-Hop Dance</span> - Hip-hop dance refers to street dance styles primarily performed to hip-hop music or that have evolved as part of hip-hop culture. It includes a wide range of styles primarily breaking, locking, and popping which were created in the 1970s and made popular by dance crews in the United States. </p>
+                                            <p style="color: white">-> <span style="color: #ff4900;font-weight: bolder">Bolly-hop Dance</span> - Bollyhop dance style is a style which is a blend of bollywood moves and songs..with house,locking popping and other hiphop moves and music.Presently most of the movies of bollywood use this dance style and is being loved by the audience.</p>
+                                            <p style="color: white">-> <span style="color: #ff4900;font-weight: bolder">Bolly-jazz Dance</span> - it is fusing Indian dance styles with western techniques and spiced up with the colour, energy and flavour of Bollywood!</p>
+                                            <p style="color: white">-> <span style="color: #ff4900;font-weight: bolder">Salsa Dance</span> - Salsa is a dance form with origins from the Cuban Son (circa 1920s) and Afro-Cuban dance (specifically Afro-Cuban Rumba).[citation needed] It is commonly associated with the salsa music style, although it may be danced under other types of music with an 8-count rhythm.</p>
+                                            <p style="color: white">-> <span style="color: #ff4900;font-weight: bolder">Popping Dance</span> - Popping is a street dance and one of the original funk styles that came from California during the 1960s-1970s. It is based on the technique of quickly contracting and relaxing muscles to cause a jerk in the dancer's body, referred to as a pop or a hit. This is done continuously to the rhythm of a song in combination with various movements and poses.</p>
+                                            <p style="color: white">-> <span style="color: #ff4900;font-weight: bolder">Free Style Dance</span> - Freestyle dancing is a style of physical movement, usually done to music, that isn’t choreographed or planned ahead of time. It occurs in many genres, including those where people dance with partners. By definition, this kind of dance is never the same from performance to performance, although it can be done formally and informally, sometimes using some sparse choreography as a very loose outline for the improvisation. People usually like it not only because it is fun and good exercise, but also because it is a form of confidence-boosting self-expression. This style has been around for thousands of years and is still changing, but people usually think of genres such as hip hop when they hear the term — these categories didn’t really start to develop until the late 1970s.</p>
+                                            <p style="color: white">-> <span style="color: #ff4900;font-weight: bolder">Footsteps, Flooring and Stunts.</span></p>
+                                                                
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        </div>
+
+                                    </div>
+                                    <div id="Folk">
+                                        <div id="full4">
+                                            <a id="example7" href="#">
+                                            <table style="margin-left: 20%">
+                                            <tr>
+                                                <td><img src="images/bhangra1.jpg" style="height: 79px;width: 112px;border: 1px solid #ff4900;"/></td>
+                                                <td><img src="images/dandiya2.jpg" style="height: 79px;width: 162px;border: 1px solid #ff4900;"/></td>
+                                                <td><img src="images/falk-dance.jpg" style="height: 79px;width: 112px;border: 1px solid #ff4900;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="images/fol3.jpg" style="height: 79px;width: 112px;border: 1px solid #ff4900;"/></td>
+                                                <td style="height: 79px;width: 125px;font-size: xx-large;color: white;text-align: center">FOLK DANCE</td>
+                                                <td><img src="images/folk.jpg" style="height: 79px;width: 112px;border: 1px solid #ff4900;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="images/folk1.jpg" style="height: 79px;width: 112px;border: 1px solid #ff4900;"/></td>
+                                                <td><img src="images/folk2.jpg" style="height: 79px;width: 162px;border: 1px solid #ff4900;"/></td>
+                                                <td><img src="images/folk3.jpg" style="height: 79px;width: 112px;border: 1px solid #ff4900;"/></td>
+                                            </tr>
+                                        </table></a>
+                                             <h3 align="center" style="color: #0B75AF">About Folk-Dance</h3>
+                                            <p style="color: white">Folk dance in India is a term broadly used to describe all forms of folk and tribal dances in regions across India. While Indian classical dance is considered a higher form of art and was practiced in courts, temples and on special occasions, folk dance forms are practiced in groups in rural areas as an expression of their daily work and rituals. They are performed on religious or seasonal festivals. Some of the popular folk dances that are performed across villages and cities are Bhangra, Garba, Kalbelia and Bihu.</p>
+                                         
+                                        </div>
+
+                                    </div>
+                                    <div id="Aerobics">
+                                        <div id="full5">
+                                            <a id="example7" href="#"><img class="left" style="left: 20%;position: relative;border: 1px solid #ff4900" src="images/aerobics.jpg" width="398" height="249" alt="bollywood-dance"/></a>
+                                            <h3 align="center" style="color: #0B75AF">About Aerobics</h3>
+                                            <p style="color: white">Aerobics is a form of physical exercise that combines rhythmic aerobic exercise with stretching and strength training routines with the goal of improving all elements of fitness (flexibility, muscular strength, and cardio-vascular fitness). It is usually performed to music and may be practiced in a group setting led by an instructor (fitness professional), although it can be done solo and without musical accompaniment. With the goal of preventing illness and promoting physical fitness, practitioners perform various routines comprising a number of different dance-like exercises. Formal aerobics classes are divided into different levels of intensity and complexity. Aerobics classes may allow participants to select their level of participation according to their fitness level. Many gyms offer a variety of aerobic classes. Each class is designed for a certain level of experience and taught by a certified instructor with a specialty area related to their particular class.</p>
+                                            <p style="color: white">At Jossh N Junoon, you can learn, Basic Steps, Dance Steps, Stretching and weight reduction Dance Aerobics.</p>
+                                        </div>
+
+                                    </div>
+                                    <div id="Event-management">
+                                        <div id="full6">
+                                            <a id="example7" href="#"><img class="left" style="left: 20%;position: relative;border: 1px solid #ff4900" src="images/event-management.jpg" width="398" height="249" alt="bollywood-dance"/></a>
+                                            <h3 align="center" style="color: #0B75AF">About Event Management</h3>
+                                            <p style="color: white">We organized many events like, Birthday Party with Dance theme, Dance Choreography in Marriage and other social functions , Dance Competion</p>
+                                        </div>
+
+                                    </div>
+                                    <div id="Yoga">
+                                        <div id="full7">
+                                            <a id="example7" href="#"><img class="left" style="left: 20%;position: relative;border: 1px solid #ff4900" src="images/yoga1.jpg" width="398" height="249" alt="bollywood-dance"/></a>
+                                            <h3 align="center" style="color: #0B75AF">About Yoga</h3>
+                                            <p style="color: white">We teach Yoga under expert guidance of Yoga Guru and qualified doctor. Special thrust on Obesity Yoga and Diabetic Yoga.</p>
+                                            <p style="color: #ff4900">What is obesity?</p>
+<p style="color: white"> 
+Excess accumulation of fats (Resulting in increased weight)
+In today's technology dominated world, physical activity has decreased resulting in accumulation of fats.
+Consuming excessive calaries and not spending enough calaries.
+Obesity may become reason for various other diseases such as thyroid problems
+Obesity is result of imbalance of physical, mental and emotional energies</p>
+ <p style="color: #ff4900">
+Obesity and Yoga</p>
+ <p style="color: white">
+Yoga works on all aspects of Obesity or excess weight (physical, emotional and mental)
+Regular practice of Yoga and controlled life style reduces obesity (weight is reduced).
+Yoga makes human being agile, efficient and slim.
+Yoga is suitable for people in any age group.
+Yoga helps achieve control over mind and behavior (one can easily control food habits and change life style to reduce the obesity.)
+Yoga has different effect on obesity, which is permanent in nature than other techniques for obesity reduction. Weight loss is permanent but one needs to practice few important techniques regularly.</p>
+ <p style="color: white">Regular practice of yoga does reduce blood sugar levels, the blood pressure, weight, the rate of progression to the complications, and the severity of the complications as well. The symptoms are also reduced to a great extent, so are number of diabetes related hospital admissions. The quality of life questionnaires do reveal a remarkable improvement in the scores. These finding are uniform for all those who are trying to find effect of yoga on diabetes. </p>
+                                        </div>
+
+                                    </div>
+                                    <div id="Workshop">
+                                        <div id="full8">
+                                            <a id="example7" href="#"><img class="left" style="left: 20%;position: relative;border: 1px solid #ff4900" src="images/workshop2.jpg" width="398" height="249" alt="bollywood-dance"/></a>
+                                            <h3 align="center" style="color: #0B75AF">About Work-shop</h3>
+                                            <p style="color: white">Dance workshops at School, Colleges, Institutions etc… Special Dance Work Shops for Corporate executives for STRESS RELAXATION</p>
+                                        </div>
+
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    </div>
+
+                </div>
+                     <footer id="page-footer">
+
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="span4">
+                        <div>
+                            <div class="fancy-headers"><h3><span>Jossh N Junoon</span> Dance Academy</h3></div>
+                            <div class="vcard">
+                               
+                                <div class="fancy-headers"  ><h3><span>Ahmedabad Studio</span></h3></div>
+                                <div class="adr">
+                                    <span class="street-address">8, Ground Floor,</span>
+                                    <span class="extended-address">Opp, Mother Milk Palace and Gormo Restaurant,</span><br/>
+                                    <span class="locality">Judges Bunglow Road,</span>
+                                    <abbr class="region">Bodakdev,</abbr>
+                                    <span class="postal-code">Ahmedabad-380054.</span>
+                                </div>
+<!--                                <div class="tel">999 871 7078</div>-->
+<!--                                <div><a class="email" href="#">josh&amp;junnon@jmservice.in</a></div>-->
+                            </div>
+                        </div>
+                        <div class="vcard">
+                            <div class="fancy-headers"><h3><span>Sanand Studio</span></h3></div>
+                            <div class="adr">
+                            <span class="street-address">201-202-203,</span><br/>
+                                    <span class="extended-address">Arth Complex,Apna Cinema,</span><br/>
+                                    
+                                    <abbr class="region">Opp. Ghodagadi Stand,</abbr><br/>
+                                    <span class="postal-code">Sanand.</span>
+<!--                            <div class="vcard">
+                                <div class="tel">phone: 392 120 320</div>
+                            </div>-->
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="span4">
+                        <div>
+                            <div class="fancy-headers"><h3>Choreographers</h3></div>
+                            <p>Those are the people, who take care of everything, so you could dance being safe and have fun!</p>
+                            <p>10 Years of Experience in Dance Field (as dance Choreographer) </p>
+                            <ul class="staff-members">
+                               
+                                <li>
+                                    <p class="bubble">Vishwam Shukla</p>
+                                    <figure><img src="images/vishvam.jpg" alt="staff09" width="" height="" /></figure><br/>
+                                    <div class="tel" style="color: #ff4900"><img src="images/contact (1).png" style="width: 12px;height:12px"/> 9998717078</div>
+                                    
+                                </li>
+                                <li>
+                                    <p class="bubble">Nisarg Pandya</p>
+                                    <figure><img src="images/nisharg.jpg" alt="staff10" width="" height="" /></figure><br/>
+                                     <div class="tel" style="color: #ff4900"><img src="images/contact (1).png" style="width: 12px;height:12px"/> 9925040308</div>
+                                </li>
+                                
+                            </ul>
+                           
+                         </div>
+                         
+                        </div>	 
+
+                    <div class="span4">
+                        <div>
+                            <div class="fancy-headers"><h3>social hub</h3></div>
+                            <p>Be always up to date with our latest events! Like our Facebook Fanpage and follow us on Twitter. Discounts, free entries and contest are waiting for you!</p>
+                            
+                                <a target="_blank" href="http://www.youtube.com/channel/UCGe4IC25HhjfBPNPuz5UUEw"><img src="images/youtube-icon.png" style="width: 64px;height: 64px"/></a>
+                                <a target="_blank" href="https://www.facebook.com/pages/Jossh-N-Junoon-Dance-Academy/468766696566981"><img src="images/facebook-icon.png" style="width: 64px;height: 64px"/></a>
+                                <a target="_blank" href="https://twitter.com/josshnjunoon"><img src="images/twitter-icon.png" style="width: 64px;height: 64px"/></a>
+<!--                                <a href="#"><img src="images/Instagram-icon.png" style="width: 64px;height: 64px"/></a>-->
+                            
+                        </div>
+                        						
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="copyright">2013 All rights reserved by <a href="#">JM Services Company Private Limited</a>. <span class="author">Developed by <a href="#" title="">Vrushank(9974856626) &amp; Manan(9909913283) </a></span></div>
+        </footer>
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+
+</html>
